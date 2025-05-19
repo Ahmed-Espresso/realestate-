@@ -1,0 +1,226 @@
+@supports not (--custom: value) {
+  body { background-color: #0d1b2a; color: white; }
+}
+html {
+  visibility: hidden;
+}
+html.theme-night,
+html.theme-day,
+html.theme-wine{
+  visibility: visible;
+}
+body {
+  margin: 0;
+  overflow-x: hidden;
+}
+html{
+  transition: all 4s ease-in-out;
+}
+#nav-btn .nav-btn__item i,
+#nav-btn .nav-btn__item span {
+  color: var(--nav-btn-color) !important;
+  transition: color 3s ease !important;
+  will-change: color;
+}
+canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0;
+  transition: opacity 6s ease;
+}
+.theme-night {
+  background-color: #0d1b2a ;
+}
+.theme-day {
+background-color: #26A69A;
+}
+.theme-wine {
+  background-color: #4a0033;
+}
+.theme-night  #space,
+.theme-day    #day-canvas,
+.theme-wine   #wine-canvas {
+  opacity: 1;
+}
+.theme-wine::after {
+  content: '';
+  position: fixed; top: 0; left: 0;
+  width: 100%; height: 100%;
+  background: radial-gradient(circle at center,
+    rgba(157,114,67,0.2) 0%, rgba(157,114,67,0) 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+html.theme-night {
+  --welcome-color: rgba(0, 191, 255, 1);
+  --section-bg:  transparent ;  /* خلفية القسم */ 
+  --h1-color: rgba(0, 191, 255, 1);  /* لون H1 */
+  --nav-bg: rgba(0, 0, 0, 0) ; /* خلفية النافبار */
+  --nav-btn-color :rgba(0, 191, 255, 1) ; /* لون زر النافبار */
+  --nav-btn-bg: transparent;  /* خلفية زر النافبار */
+  --nav-icon-color:rgba(0, 191, 255, 1) ;  /* لون أيقونة النافبار */
+  --nav-active-color: rgba(0, 191, 255, 1) ; /* لون زر نشط في النافبار */
+  --offer-border: transparent;  /* بُوردر العروض */
+  --offer-text-color:rgba(0, 191, 255, 1) ;  /* لون نص العروض */
+  --offer-bg:rgba(0,0,0,0.1)  ;  /* خلفية العروض */
+  --offer-title-color: rgba(0, 191, 255, 1) ; /* لون عنوان العرض */
+  --offer-title-shadow: 0 0 10px 0 0 20px rgba(0, 191, 255, 1); /* ظل نص عنوان العرض */
+  --offer-discount-color:rgba(0, 191, 255, 1)  ; /* لون الخصم */
+  --offer-discount-ground: rgba(0, 191, 255, 0.4) ; /* بُوردر الخصم */
+  --offer-discount-shadow:0 0 6px rgba(0, 191, 255, 1) ; /* ظل نص الخصم */
+  --timeblock-bg: rgba(0, 191, 255, 0.4); /* خلفية بلوك الوقت */
+  --time-number-color: rgba(0, 191, 255, 1); /* لون أرقام الوقت */
+  --time-number-shadow: 0 0 20px  rgba(0, 191, 255, 1) ;  /* ظل أرقام الوقت */
+  --time-label-color: rgba(0, 191, 255, 1); /* لون تسمية الوقت */
+  --time-colon-color:rgba(0, 191, 255, 1) ; /* لون النقطتين */
+  --time-colon-shadow: 0 0 6px  rgba(0, 191, 255, 1); /* ظل النقطتين */
+  --bot-border: 2px solid #00bfff  ;  /* بُوردر البوت */
+  --bot-bg: #0d1b2a ;             /* خلفية البوت */
+  --bot-name-color: #00bfff;     /* لون اسم البوت */
+  --bot-scroll-thumb: #00bfff;   /* لون شريط تمرير البوت */
+  --bot-msg-border: #00bfff; /* بُوردر رسالة البوت */
+  --bot-msg-bg: rgba(13,27,42,0.8);  /* خلفية رسالة البوت */
+  --bot-msg-text: #00bfff;    /* لون نص رسالة البوت */
+  --bot-msg-arrow-bg: #00bfff;  /* خلفية سهم رسالة البوت */
+  --user-msg-bg: #00bfff;      /* خلفية رسالة المستخدم */
+  --user-msg-border: #00bfff;  /* بُوردر رسالة المستخدم */
+  --user-msg-text: #0d1b2a;   /* لون نص رسالة المستخدم */
+  --user-msg-arrow-bg: #00bfff; /* خلفية سهم رسالة المستخدم */
+  --input-text-color: rgba(255,255,255,0.1);/* لون نص حقل الإدخال */
+  --input-placeholder-color: #7aaedc; /* لون placeholder */
+  --input-icon-color: #00bfff;     ;/* لون أيقونات حقل الإدخال */
+  --bot-btn-bg: linear-gradient(135deg, rgba(0,191,255,0.85), rgba(72,239,255,0.9));
+  --bot-btn-hover-bg: linear-gradient(135deg, rgba(0,191,255,1), rgba(0,255,234,1));
+  --bot-btn-before-bg: linear-gradient(120deg, rgba(0,191,255,0.5), rgba(0,255,234,0.4)); /* خلفية أزرار البوت */
+  --bot-btn-hover-bg: #00bfff;   
+  --bot-btn-color: #0d1b2a;   /* لون نص أزرار البوت */
+  --bot-btn-border: #00bfff;   /* بُوردر أزرار البوت */
+  --bot-btn-before-bg: rgba(255,255,255,0.6); /* قبل (::before) لأزرار البوت */
+  --aboutme-text-color: rgba(0, 191, 255, 1);  /* لون نص "من أنا" */
+  --quickcontact-input-border:  rgba(0, 191, 255, 1); /* بُوردر حقل التواصل السريع */
+  --quickcontact-label-color:rgba(0, 191, 255, 1) ; /* لون تسمية التواصل السريع */
+  --quickcontact-focus-border: rgba(0, 191, 255, 1);/* بُوردر عند الفوكس */
+  --quickcontact-focus-text: rgba(0, 191, 255, 1); /* لون نص عند الفوكس */
+  --quickcontact-btn-border:rgba(0, 191, 255, 1) ; /* بُوردر زر التواصل */
+  --quickcontact-btn-text: rgba(0, 191, 255, 1); /* لون نص زر التواصل */
+  --quickcontact-btn-hover-bg:rgba(0, 191, 255, 1) ; /* خلفية hover زر التواصل */
+  --quickcontact-btn-hover-text: black ; /* لون نص hover زر التواصل */
+  --quickcontact-success-border:  rgba(0, 191, 255, 1) ; /* بُوردر رسالة التأكيد */
+  --quickcontact-success-text: rgba(0, 191, 255, 1);/* لون نص رسالة التأكيد */
+  --caard-color: transparent ; /* لون نص رسالة التأكيد */
+}
+html.theme-day {
+  --welcome-color: white  ;
+  --section-bg: rgba(0,0,0,0) ; /* خلفية القسم */ 
+  --h1-color: white;  /* لون H1 */
+  --nav-bg: rgba(0,0,0,0); /* خلفية النافبار */
+  --nav-btn-color:  white; /* لون زر النافبار */
+  --nav-btn-bg:  transparent ;  /* خلفية زر النافبار */
+  --nav-icon-color: white ;  /* لون أيقونة النافبار */
+  --nav-active-color:  white ; /* لون زر نشط في النافبار */
+  --offer-border:transparent ;  /* بُوردر العروض */
+  --offer-text-color:white ;  /* لون نص العروض */
+  --offer-bg: rgba(0,77,64,0.2);  /* خلفية العروض */
+  --offer-title-color: white; /* لون عنوان العرض */
+  --offer-title-shadow: ; /* ظل نص عنوان العرض */
+  --offer-discount-color: white; /* لون الخصم */
+  --offer-discount-ground: rgba(0,121,107,0.7) ; /* بُوردر الخصم */
+  --offer-discount-shadow: ; /* ظل نص الخصم */
+  --timeblock-bg:rgba(0,121,107,0.7) ; /* خلفية بلوك الوقت */
+  --time-number-color:white ; /* لون أرقام الوقت */
+  --time-number-shadow: ;  /* ظل أرقام الوقت */
+  --time-label-color:white ; /* لون تسمية الوقت */
+  --time-colon-color: white; /* لون النقطتين */
+  --time-colon-shadow: ; /* ظل النقطتين */
+  --bot-border:transparent; /* بُوردر البوت */
+  --bot-bg:  #00796B ;/* خلفية البوت */
+  --bot-name-color: white; /* لون اسم البوت */
+  --bot-scroll-thumb: #00796B ; /* لون شريط تمرير البوت */
+  --bot-msg-border: #00796B;/* بُوردر رسالة البوت */
+  --bot-msg-bg: #00796B; /* خلفية رسالة البوت */
+  --bot-msg-text: white;/* لون نص رسالة البوت */
+  --bot-msg-arrow-bg:#00796B ; /* خلفية سهم رسالة البوت */
+  --user-msg-bg:  #26A69A; /* خلفية رسالة المستخدم */
+  --user-msg-border: #26A69A;/* بُوردر رسالة المستخدم */
+  --user-msg-text: white; /* لون نص رسالة المستخدم */
+  --user-msg-arrow-bg: #26A69A; /* خلفية سهم رسالة المستخدم */
+  --input-text-color: ;/* لون نص حقل الإدخال */
+  --input-placeholder-color:white ;/* لون placeholder */
+  --input-icon-color: white;/* لون أيقونات حقل الإدخال */
+  --bot-btn-bg:#00796B ;/* خلفية أزرار البوت */
+  --bot-btn-border:#26A69A  ; /* بُوردر أزرار البوت */
+  --bot-btn-hover-bg:#26A69A  ; /* خلفية hover لأزرار البوت */
+  --bot-btn-before-bg: #26A69A ;/* قبل (::before) لأزرار البوت */
+  --aboutme-text-color:white ;  /* لون نص "من أنا" */
+  --quickcontact-input-border:white  ; /* بُوردر حقل التواصل السريع */
+  --quickcontact-label-color:white  ; /* لون تسمية التواصل السريع */
+  --quickcontact-focus-border: white;/* بُوردر عند الفوكس */
+  --quickcontact-focus-text:white  ; /* لون نص عند الفوكس */
+  --quickcontact-btn-border: white ; /* بُوردر زر التواصل */
+  --quickcontact-btn-text: white ; /* لون نص زر التواصل */
+  --quickcontact-btn-hover-bg: ; /* خلفية hover زر التواصل */
+  --quickcontact-btn-hover-text:white  ; /* لون نص hover زر التواصل */
+  --quickcontact-success-border: white ; /* بُوردر رسالة التأكيد */
+  --quickcontact-success-text:white  ;/* لون نص رسالة التأكيد */
+  --caard-color: rgba(0,0,0,0.6); /* لون نص رسالة التأكيد */
+}
+html.theme-wine {
+  --welcome-color: #c0b49e;
+  --section-bg: transparent ;  /* خلفية القسم */ 
+  --h1-color: #c0b49e ;  /* لون H1 */
+  --nav-bg: transparent ; /* خلفية النافبار */
+  --nav-btn-color: #c0b49e ; /* لون زر النافبار */
+  --nav-btn-bg:transparent;  /* خلفية زر النافبار */
+  --nav-icon-color: #c0b49e;  /* لون أيقونة النافبار */
+  --nav-active-color: #c0b49e; /* لون زر نشط في النافبار */
+  --offer-border: transparent;      /* ظل بيج ناعم */
+  --offer-text-color: #C0B49E;                   /* لون نص بيج */
+  --offer-bg: rgba(192, 180, 158, 0.1);          /* خلفية خفيفة بيج */
+  --offer-title-color: #C0B49E;                  /* العنوان بلون بيج واضح */
+  --offer-title-shadow: 1px 1px 4px #00000055;   /* ظل خفيف داكن */
+  --offer-discount-color: #c0b49e;               /* خصم بلون ذهبي يجذب الانتباه */
+  --offer-discount-ground: #4A0033 ; /* بُوردر الخصم */
+  --offer-discount-shadow: 0 0 6px #c0b49e88;    /* ظل ذهبي ناعم */
+  --timeblock-bg: #4A0033;                       /* نفس لون خلفية الموقع */
+  --time-number-color: #C0B49E;                  /* أرقام بيج */
+  --time-number-shadow: 0 0 4px #C0B49E55;       /* ظل ناعم بيج للأرقام */
+  --time-label-color: #C0B49E;                   /* نفس لون الأرقام */
+  --time-colon-color: #c0b49e;                   /* النقطتين بلون ذهبي */
+  --time-colon-shadow: 0 0 4px #c0b49e66;        /* ظل ذهبي ناعم للنقطتين */
+  --bot-border:transparent;  /* بُوردر البوت */
+  --bot-bg: #c0b49e ; /* خلفية البوت */
+  --bot-name-color: #4a0033; /* لون اسم البوت */
+  --bot-scroll-thumb:#c0b49e ; /* لون شريط تمرير البوت */
+  --bot-msg-border:#c0b49e ;/* بُوردر رسالة البوت */
+  --bot-msg-bg:#c0b49e ; /* خلفية رسالة البوت */
+  --bot-msg-text: #4a0033;/* لون نص رسالة البوت */
+  --bot-msg-arrow-bg: #c0b49e; /* خلفية سهم رسالة البوت */
+  --user-msg-bg: #4a0033; /* خلفية رسالة المستخدم */
+  --user-msg-border: #4a0033;/* بُوردر رسالة المستخدم */
+  --user-msg-text:#c0b49e ; /* لون نص رسالة المستخدم */
+  --user-msg-arrow-bg:#4a0033 ; /* خلفية سهم رسالة المستخدم */
+  --input-text-color: ;/* لون نص حقل الإدخال */
+  --input-placeholder-color: #4a0033;/* لون placeholder */
+  --input-icon-color:#4a0033 ;/* لون أيقونات حقل الإدخال */
+  --bot-btn-bg: rgba(255, 255, 255, 0.1);/* خلفية أزرار البوت */
+  --bot-btn-border: #c0b49e ; /* بُوردر أزرار البوت */
+  --bot-btn-hover-bg:#c0b49e ; /* خلفية hover لأزرار البوت */
+  --bot-btn-before-bg: rgba(255, 255, 255, 0.7);/* قبل (::before) لأزرار البوت */
+  --aboutme-text-color:#c0b49e ;  /* لون نص "من أنا" */
+  --quickcontact-input-border:#c0b49e ; /* بُوردر حقل التواصل السريع */
+  --quickcontact-label-color: #c0b49e; /* لون تسمية التواصل السريع */
+  --quickcontact-focus-border:#c0b49e ;/* بُوردر عند الفوكس */
+  --quickcontact-focus-text: #c0b49e; /* لون نص عند الفوكس */
+  --quickcontact-btn-border:#c0b49e ; /* بُوردر زر التواصل */
+  --quickcontact-btn-text: #c0b49e; /* لون نص زر التواصل */
+  --quickcontact-btn-hover-bg:#c0b49e ; /* خلفية hover زر التواصل */
+  --quickcontact-btn-hover-text:#4a0033 ; /* لون نص hover زر التواصل */
+  --quickcontact-success-border: #c0b49e; /* بُوردر رسالة التأكيد */
+  --quickcontact-success-text:#c0b49e ;/* لون نص رسالة التأكيد */
+  --caard-color: rgba(0,0,0,0.6); /* لون نص رسالة التأكيد */
+}
